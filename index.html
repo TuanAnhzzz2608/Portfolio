@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Nguyen Tuan Anh</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="#about-me" class="nav-link">About Me</a>
+            <a href="#honors-achievement" class="nav-link">Honors & Achievement</a>
+            <a href="#charities" class="nav-link">Charities</a>
+            <a href="#school-activities" class="nav-link">School Activities</a>
+            <a href="#other-activities" class="nav-link">Other Activities</a>
+            <a href="#my-little-corner" class="nav-link">My Little Corner</a>
+        </div>
+    </nav>
+    <div class="container">
+        <header class="header">
+            <div class="profile-section">
+                <div class="photo-container">
+                    <img src="profile-photo.jpg" alt="Nguyen Tuan Anh" class="profile-photo" id="profilePhoto">
+                    <div class="photo-placeholder" id="photoPlaceholder">
+                        <span>Personal Photo</span>
+                    </div>
+                </div>
+                <h1 class="name">Nguyen Tuan Anh</h1>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section id="about-me" class="section">
+                <h2 class="section-title">Personal Information</h2>
+                <div class="info-grid-full">
+                    <div class="info-item">
+                        <span class="info-label">Full Name:</span>
+                        <span class="info-value">Nguyen Tuan Anh</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Email:</span>
+                        <span class="info-value">nguyentuananh26082008@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Mobile:</span>
+                        <span class="info-value">(+84) 888059027</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Location:</span>
+                        <span class="info-value">Ho Chi Minh City, Vietnam</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-list">
+                    <div class="education-item">
+                        <div class="education-info">
+                            <span class="education-label">Middle School:</span>
+                            <span class="education-name">Tran Dai Nghia High School for the Gifted</span>
+                        </div>
+                        <span class="education-year">2019 - 2023</span>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-info">
+                            <span class="education-label">High School:</span>
+                            <span class="education-name">VNU-HCM High School for the Gifted, Specialized in Computer Science</span>
+                        </div>
+                        <span class="education-year">2023 - 2026</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Academic Performance</h2>
+                <div class="gpa-grid">
+                    <div class="gpa-item">
+                        <span class="gpa-grade">Grade 9</span>
+                        <span class="gpa-score">9.4</span>
+                    </div>
+                    <div class="gpa-item">
+                        <span class="gpa-grade">Grade 10</span>
+                        <span class="gpa-score">9.2</span>
+                    </div>
+                    <div class="gpa-item">
+                        <span class="gpa-grade">Grade 11</span>
+                        <span class="gpa-score">9.3</span>
+                    </div>
+                    <div class="gpa-item">
+                        <span class="gpa-grade">Grade 12</span>
+                        <span class="gpa-score">9.4</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">English Language Proficiency</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">IELTS:</span>
+                        <span class="info-value">6.5</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="honors-achievement" class="section">
+                <h2 class="section-title">HONORS & AWARDS</h2>
+                
+                <div class="honors-category">
+                    <h3 class="category-title">Academic:</h3>
+                    <div class="awards-grid">
+                        <div class="award-card">
+                            <div class="award-image-wrapper" onclick="openModal(this)">
+                                <img src="awards/gold-award-philippines.jpg" alt="Gold Award - Philippines International Mathematics Olympiad" class="award-card-image">
+                            </div>
+                            <div class="award-card-content">
+                                <span class="award-card-title">Gold Award</span>
+                                <span class="award-card-desc">Philippines International Mathematics Olympiad</span>
+                            </div>
+                        </div>
+                        <div class="award-card">
+                            <div class="award-image-wrapper" onclick="openModal(this)">
+                                <img src="awards/1st-runner-up-informatics.jpg" alt="1st runner-up - Citywide Young Informatics Competition" class="award-card-image">
+                            </div>
+                            <div class="award-card-content">
+                                <span class="award-card-title">1st runner-up</span>
+                                <span class="award-card-desc">Category B of Citywide Young Informatics Competition 32th Edition</span>
+                            </div>
+                        </div>
+                        <div class="award-card">
+                            <div class="award-image-wrapper" onclick="openModal(this)">
+                                <img src="awards/2nd-prize-national-informatics.jpg" alt="2nd Prize - National Young Informatics Competition" class="award-card-image">
+                            </div>
+                            <div class="award-card-content">
+                                <span class="award-card-title">2nd Prize</span>
+                                <span class="award-card-desc">Category B of the National Young Informatics Competition 29th Edition</span>
+                            </div>
+                        </div>
+                        <div class="award-card">
+                            <div class="award-image-wrapper" onclick="openModal(this)">
+                                <img src="awards/2nd-prize-citywide-computer-science.jpg" alt="2nd Prize - Citywide Excellent Student Contest" class="award-card-image">
+                            </div>
+                            <div class="award-card-content">
+                                <span class="award-card-title">2nd Prize</span>
+                                <span class="award-card-desc">Citywide Excellent Student Contest in Computer Science</span>
+                            </div>
+                        </div>
+                        <div class="award-card">
+                            <div class="award-image-wrapper" onclick="openModal(this)">
+                                <img src="awards/codeforces-expert.jpg" alt="Codeforces Expert Certificate" class="award-card-image">
+                            </div>
+                            <div class="award-card-content">
+                                <span class="award-card-title">Expert</span>
+                                <span class="award-card-desc">Codeforces: 1627 (max)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="honors-category">
+                    <h3 class="category-title">Sport:</h3>
+                    <div class="awards-list">
+                        <div class="award-item">
+                            <div class="award-info">
+                                <span class="award-title">Gold Medal</span>
+                                <span class="award-desc">School-level Soccer Competition</span>
+                            </div>
+                        </div>
+                        <div class="award-item">
+                            <div class="award-info">
+                                <span class="award-title">Gold Medal</span>
+                                <span class="award-desc">School-level Soccer Competition</span>
+                            </div>
+                        </div>
+                        <div class="award-item">
+                            <div class="award-info">
+                                <span class="award-title">Silver Medal</span>
+                                <span class="award-desc">School-level Chess Competition</span>
+                            </div>
+                        </div>
+                        <div class="award-item">
+                            <div class="award-info">
+                                <span class="award-title">Bronze Medal</span>
+                                <span class="award-desc">Citywide Student Sports Competition - Soccer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="charities" class="section">
+                <h2 class="section-title">CHARITIES</h2>
+                
+                <div class="charities-grid">
+                    <div class="charity-card">
+                        <div class="charity-image-wrapper" onclick="openModal(this)">
+                            <img src="charities/xuan-yeu-thuong.jpg" alt="Xuan Yeu Thuong Project" class="charity-card-image">
+                        </div>
+                        <div class="charity-card-content">
+                            <h3 class="charity-card-title">HEAD OF HUMAN RESOURCES, "Xuan Yeu Thuong" Project</h3>
+                            <span class="charity-card-period">2024-2025</span>
+                            <p class="charity-card-description">A traditional fundraising project for orphanages across Ho Chi Minh City. Expanded team from 20 to ~60 members and raised approximately 12 million VND.</p>
+                        </div>
+                    </div>
+
+                    <div class="charity-card">
+                        <div class="charity-image-wrapper" onclick="openModal(this)">
+                            <img src="charities/basketball-charity.jpg" alt="NKH x CEL Basketball Charity" class="charity-card-image">
+                        </div>
+                        <div class="charity-card-content">
+                            <h3 class="charity-card-title">EVENT ORGANIZER/FUNDRAISER, "NKH x CEL" 3x3 Charity Basketball Superleague 2025</h3>
+                            <span class="charity-card-period">Jul 2025</span>
+                            <p class="charity-card-description">A fundraiser supporting underprivileged Cham ethnic students in An Giang province. Organized basketball tournament with 15 teams, donating 25+ million VND to two primary schools.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="school-activities" class="section">
+                <h2 class="section-title">School Activities</h2>
+                <div class="content-placeholder">
+                    <p>Content coming soon...</p>
+                </div>
+            </section>
+
+            <section id="other-activities" class="section">
+                <h2 class="section-title">Other Activities</h2>
+                <div class="content-placeholder">
+                    <p>Content coming soon...</p>
+                </div>
+            </section>
+
+            <section id="my-little-corner" class="section">
+                <h2 class="section-title">My Little Corner</h2>
+                <div class="content-placeholder">
+                    <p>Content coming soon...</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Portfolio - Nguyen Tuan Anh</p>
+        </footer>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        // Check if profile photo exists, if not hide placeholder
+        const profilePhoto = document.getElementById('profilePhoto');
+        const photoPlaceholder = document.getElementById('photoPlaceholder');
+        
+        profilePhoto.onerror = function() {
+            this.style.display = 'none';
+            photoPlaceholder.style.display = 'flex';
+        };
+        
+        profilePhoto.onload = function() {
+            photoPlaceholder.style.display = 'none';
+        };
+
+        // Modal for award images
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const span = document.getElementsByClassName('modal-close')[0];
+
+        function openModal(element) {
+            const img = element.querySelector('.award-image') || element.querySelector('.award-card-image') || element.querySelector('.charity-card-image');
+            modal.style.display = 'block';
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+        }
+
+        span.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

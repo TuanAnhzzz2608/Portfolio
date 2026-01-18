@@ -1,0 +1,558 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+    padding-top: 80px;
+}
+
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #667eea;
+    font-weight: 500;
+    font-size: 0.95em;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-link:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.content-placeholder {
+    padding: 40px;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
+
+.charities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.charity-card {
+    display: flex;
+    flex-direction: column;
+    background: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.charity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.charity-image-wrapper {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.charity-image-wrapper:hover .charity-card-image {
+    transform: scale(1.1);
+}
+
+.charity-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.charity-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.charity-card-title {
+    font-size: 1.1em;
+    color: #667eea;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.charity-card-period {
+    color: #667eea;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.charity-card-description {
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-top: 5px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+@keyframes zoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.photo-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 10px;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.photo-placeholder {
+    display: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid white;
+    background: rgba(255, 255, 255, 0.2);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.name {
+    font-size: 2.5em;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.main-content {
+    padding: 40px 30px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section:last-child {
+    margin-bottom: 0;
+}
+
+.section-title {
+    font-size: 1.8em;
+    color: #667eea;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #667eea;
+    font-weight: 400;
+}
+
+.info-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.info-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.info-grid-full {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    border-left: 4px solid #667eea;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #555;
+    min-width: 150px;
+    margin-right: 20px;
+}
+
+.info-value {
+    color: #333;
+    font-size: 1.1em;
+}
+
+.gpa-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.gpa-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    border-top: 4px solid #667eea;
+}
+
+.gpa-grade {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.gpa-score {
+    font-size: 1.8em;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.education-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    border-left: 4px solid #667eea;
+}
+
+.education-info {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex: 1;
+}
+
+.education-label {
+    font-weight: 600;
+    color: #555;
+    min-width: 110px;
+}
+
+.education-name {
+    color: #333;
+    font-size: 1.05em;
+}
+
+.education-year {
+    color: #667eea;
+    font-weight: 600;
+    font-size: 0.95em;
+    white-space: nowrap;
+    margin-left: 20px;
+}
+
+.honors-category {
+    margin-bottom: 30px;
+}
+
+.honors-category:last-of-type {
+    margin-bottom: 0;
+}
+
+.category-title {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.awards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.award-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 18px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    border-left: 4px solid #667eea;
+}
+
+.award-card {
+    display: flex;
+    flex-direction: column;
+    background: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.award-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.award-image-wrapper {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.award-image-wrapper:hover .award-card-image {
+    transform: scale(1.1);
+}
+
+.award-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.award-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.award-card-title {
+    font-size: 1.1em;
+    color: #667eea;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.award-card-desc {
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.award-title {
+    font-weight: 600;
+    color: #667eea;
+    font-size: 1.05em;
+}
+
+.award-desc {
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    .name {
+        font-size: 2em;
+    }
+    
+    .section-title {
+        font-size: 1.5em;
+    }
+    
+    .info-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-grid-full {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .info-label {
+        margin-bottom: 5px;
+        margin-right: 0;
+    }
+    
+    .gpa-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .education-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .education-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .education-label {
+        min-width: auto;
+    }
+    
+    .education-year {
+        margin-left: 0;
+    }
+    
+    .award-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .awards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .charities-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-content {
+        padding: 30px 20px;
+    }
+    
+    .header {
+        padding: 30px 20px;
+    }
+}
